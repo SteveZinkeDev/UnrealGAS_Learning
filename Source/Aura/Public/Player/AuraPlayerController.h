@@ -37,6 +37,8 @@ class AURA_API AAuraPlayerController : public APlayerController
     void Move (const FInputActionValue& InputActionValue);
     void CursorTrace ();
 
-    IEnemyInterface* LastActor;
-    IEnemyInterface* CurrActor;
+    UPROPERTY()
+    TScriptInterface<IEnemyInterface> LastActor;
+    UPROPERTY()
+    TScriptInterface<IEnemyInterface> CurrActor;
 };

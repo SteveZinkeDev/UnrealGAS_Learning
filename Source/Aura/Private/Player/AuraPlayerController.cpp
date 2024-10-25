@@ -24,9 +24,7 @@ void AAuraPlayerController::BeginPlay ()
   check(AuraContext);
 
   UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
-  check(Subsystem);
-
-  Subsystem->AddMappingContext(AuraContext, 0);
+  if (Subsystem) Subsystem->AddMappingContext(AuraContext, 0);
 
   bShowMouseCursor = true;
   DefaultMouseCursor = EMouseCursor::Default;
@@ -53,7 +51,7 @@ void AAuraPlayerController::Move (const FInputActionValue& InputActionValue)
    * The commented code below is from the course and both unnecessary as well as error-prone (with the current setup).
    * The camera will be fixed in this game, hence the X/Y directions will also be in accordance with the world axes.
    * With the commented code below, the movement will depend on the rotation of the player start,
-   * meaning if it's rotation by 180 degrees, all inputs will be reversed...
+   * meaning if it's rotated by 180 degrees, all inputs will be reversed...
    * -> Inheriting Yaw during start would solve this problem but again, this isn't even what we want according to the course.
    */
   
@@ -87,7 +85,7 @@ void AAuraPlayerController::CursorTrace ()
   if (!CursorHit.bBlockingHit) return;
 
   LastActor = CurrActor;
-  CurrActor = Cast<IEnemyInterface>(CursorHit.GetActor());
+  CurrActor = CursorHit.GetActor();
 
   if (LastActor == CurrActor) return;
 
