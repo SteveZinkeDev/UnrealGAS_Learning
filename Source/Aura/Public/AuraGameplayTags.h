@@ -33,7 +33,12 @@ struct FAuraGameplayTags
     FGameplayTag Attributes_Secondary_HealthRegeneration;
     FGameplayTag Attributes_Secondary_ManaRegeneration;
 
-  protected:
+    FGameplayTag Input_LMB;
+    FGameplayTag Input_RMB;
+    FGameplayTag Input_1;
+    FGameplayTag Input_2;
+    FGameplayTag Input_3;
+    FGameplayTag Input_4;
 
   private:
     static FAuraGameplayTags GameplayTags;

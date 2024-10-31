@@ -26,4 +26,12 @@ void FAuraGameplayTags::InitializeNativeGameplayTags ()
   GameplayTags.Attributes_Secondary_CritResistance = Mgr.AddNativeGameplayTag(FName("Attributes.Secondary.CritResistance"));
   GameplayTags.Attributes_Secondary_HealthRegeneration = Mgr.AddNativeGameplayTag(FName("Attributes.Secondary.HealthRegeneration"));
   GameplayTags.Attributes_Secondary_ManaRegeneration = Mgr.AddNativeGameplayTag(FName("Attributes.Secondary.ManaRegeneration"));
+
+  
+  GameplayTags.Input_LMB = Mgr.AddNativeGameplayTag(FName("Input.LMB"));
+  GameplayTags.Input_RMB = Mgr.AddNativeGameplayTag(FName("Input.RMB"));
+  GameplayTags.Input_1 = Mgr.AddNativeGameplayTag(FName("Input.1"));
+  GameplayTags.Input_2 = Mgr.AddNativeGameplayTag(FName("Input.2"));
+  GameplayTags.Input_3 = Mgr.AddNativeGameplayTag(FName("Input.3"));
+  GameplayTags.Input_4 = Mgr.AddNativeGameplayTag(FName("Input.4"));
 }
