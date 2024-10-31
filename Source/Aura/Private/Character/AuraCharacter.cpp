@@ -57,6 +57,8 @@ void AAuraCharacter::InitAbilityActorInfo ()
   AbilitySystemComponent->InitAbilityActorInfo(AuraPlayerState, this);
   Cast<UAuraAbilitySystemComponent>(AbilitySystemComponent)->AbilityActorInfoSet();
 
+  InitializeDefaultAttributes();
+
   AAuraPlayerController* APC = Cast<AAuraPlayerController>(GetController());
   if (APC)
   {
@@ -66,6 +68,4 @@ void AAuraCharacter::InitAbilityActorInfo ()
       AHUD->InitOverlay(APC, AuraPlayerState, AbilitySystemComponent, AttributeSet);
     }
   }
-
-  InitializeDefaultAttributes();
 }
